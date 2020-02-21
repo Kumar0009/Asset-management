@@ -1,0 +1,68 @@
+<!--  Item -->
+
+<div class="tree-container">
+  
+  <ng-template #trItem let-data='data'>
+    <div class="item" [style.display]="data.visiable?'block':'none'" [style.padding-left.px]="data.padding">
+      <a href="#"> {{data.name}} </a>
+    </div>
+  </ng-template>
+  <!-- Container -->
+  <ng-template #trContainer let-data='data'>
+    <div class="container" [style.display]="data.visiable?'block':'none'" (click)='hideAllChildren(data);'
+      [style.padding-left.px]="data.padding">
+      <i class="fa" [ngClass]="data.items[0].visiable? 'fa-caret-down' :  'fa-caret-right'">
+        <a href="#"> {{data.name}} </a>
+      </i>
+    </div>
+  </ng-template>
+
+  <ng-container #trVc> </ng-container>
+
+
+  <div (click)='changed()'> some content</div>
+
+</div>
+
+
+<!-- Style  -->
+<style>
+  /* .item a,
+  .container a {
+    display: inline-block;
+    border: 1px solid gray;
+    text-decoration: none;
+    color: black;
+    padding: 8px 20px;
+    background-color: gray;
+    color: white;
+    font-size: 120%;
+    width: 200px;
+  } */
+
+
+
+  .item a,
+  .container a {
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+
+  .item a:hover,
+  .container a:hover {
+    opacity: 0.8;
+  }
+
+  .container a {
+    color: hotpink;
+  }
+
+  .tree-container {
+    display: inline-flex;
+    flex-direction: column;
+    background-color: white;
+
+  }
+
+</style>
