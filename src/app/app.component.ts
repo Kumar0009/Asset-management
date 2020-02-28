@@ -6,7 +6,5 @@ import { Component, ViewContainerRef } from '@angular/core';
   styles:[]
 })
 export class AppComponent {
-  constructor( private host : ViewContainerRef){
-      console.log(this);
-  }
+ 
 }

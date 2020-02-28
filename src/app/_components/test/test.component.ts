@@ -7,9 +7,9 @@ import { Component, OnInit, ElementRef, ViewChildren, ViewChild, TemplateRef, Vi
 })
 export class TestComponent implements OnInit {
 
-  @ViewChild('trItem', { read: TemplateRef }) trItem: TemplateRef<any>;
-  @ViewChild('trContainer', { read: TemplateRef }) trContainer: TemplateRef<any>;
-  @ViewChild('trVc', { read: ViewContainerRef }) trVc: ViewContainerRef;
+  @ViewChild('trItem', { read: TemplateRef, static: false }) trItem: TemplateRef<any>;
+  @ViewChild('trContainer', { read: TemplateRef, static: false }) trContainer: TemplateRef<any>;
+  @ViewChild('trVc', { read: ViewContainerRef, static: false }) trVc: ViewContainerRef;
 
   treeConf = [
     {
